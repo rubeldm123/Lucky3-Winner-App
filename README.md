@@ -20,49 +20,40 @@ The **Lucky 3 Winner App** is a web-based application designed to randomly selec
 ### Step 1: Clone or Download the Repository
 You can clone the repository using Git or download it as a ZIP file.
 
-====================
+===============================================
 Step 2: Connect to Your EC2 Instance
 Open Terminal on your local machine.
 Connect using SSH:
-bash
-Copy code
 ssh -i /path/to/your/key.pem ubuntu@your-instance-public-ip
+===============================================
 Step 3: Install Necessary Software
 Update the package manager:
-
-bash
-Copy code
 sudo apt update && sudo apt upgrade -y
+===============================================
+
 Install Apache:
-
-bash
-Copy code
 sudo apt install apache2 -y
+===============================================
+
 Install PHP and MySQL:
-
-bash
-Copy code
 sudo apt install php libapache2-mod-php php-mysql -y
-Start Apache service:
+===============================================
 
-bash
-Copy code
+Start Apache service:
 sudo systemctl start apache2
+
+===============================================
 Step 4: Set Up the Database
 Log into MySQL:
-
-bash
-Copy code
 sudo mysql -u root -p
-Create the database:
+===============================================
 
-sql
-Copy code
+Create the database:
 CREATE DATABASE gift_voucher;
+
+===============================================
 Create the necessary tables:
 
-sql
-Copy code
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
@@ -81,7 +72,5 @@ CREATE TABLE admin (
     password VARCHAR(255) NOT NULL
 );
 Exit MySQL:
-
-sql
-Copy code
 EXIT;
+===============================================
